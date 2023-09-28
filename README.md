@@ -12,9 +12,4 @@ npm i
 cd src
 npm i
 npm run build
-cd dist
-npm link
-
-cd my-project
-npm link denji-public-client
 ```

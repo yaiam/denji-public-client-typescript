@@ -7,15 +7,14 @@
       "csharp": {
         "inputSpec": "swagger.json",
         "output": "./src",
-        "generatorName": "typescript",
+        "generatorName": "typescript-fetch",
         "globalProperty": "apiTests=false,apiDocs=false,modelTests=false,modelDocs=false",
         "additionalProperties": {
           "disallowAdditionalPropertiesIfNotPresent": true,
-          "framework": "fetch-api",
           "legacyDiscriminatorBehavior": false,
           "npmName": "denji-public-client",
           "npmVersion": "1.0.0-alpha01",
-          "platform": "browser"
+          "supportsES6": true
         }
       }
     }
