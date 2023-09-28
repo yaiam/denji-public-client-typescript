@@ -1,0 +1,116 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Public API",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/public/consent": {
+      "get": {
+        "tags": [
+          "Consent"
+        ],
+        "parameters": [
+          {
+            "name": "consentRequestId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/public/consent/accept": {
+      "post": {
+        "tags": [
+          "Consent"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Api.Api.Public.Consent.AcceptRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Api.Api.Public.Consent.AcceptRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Api.Api.Public.Consent.AcceptRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/public/consent/reject": {
+      "post": {
+        "tags": [
+          "Consent"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Api.Api.Public.Consent.RejectRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Api.Api.Public.Consent.RejectRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Api.Api.Public.Consent.RejectRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Api.Api.Public.Consent.AcceptRequest": {
+        "type": "object",
+        "properties": {
+          "consentRequestId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Api.Api.Public.Consent.RejectRequest": {
+        "type": "object",
+        "properties": {
+          "consentRequestId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
