@@ -13,7 +13,7 @@
           "disallowAdditionalPropertiesIfNotPresent": true,
           "legacyDiscriminatorBehavior": false,
           "npmName": "@yaiam/denji-public-client",
-          "npmVersion": "1.0.0-alpha03",
+          "npmVersion": "1.0.0-alpha04",
           "supportsES6": false
         }
       }

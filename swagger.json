@@ -21,7 +21,24 @@
         ],
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Api.Api.Public.Consent.GetOneResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Api.Api.Public.Consent.GetOneResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Api.Api.Public.Consent.GetOneResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -52,7 +69,24 @@
         },
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Api.Api.Public.Consent.AcceptResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Api.Api.Public.Consent.AcceptResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Api.Api.Public.Consent.AcceptResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -83,7 +117,24 @@
         },
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Api.Api.Public.Consent.RejectResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Api.Api.Public.Consent.RejectResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Api.Api.Public.Consent.RejectResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -101,10 +152,78 @@
         },
         "additionalProperties": false
       },
+      "Api.Api.Public.Consent.AcceptResponse": {
+        "type": "object",
+        "properties": {
+          "consentResponseId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Api.Api.Public.Consent.GetOneResponse": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "$ref": "#/components/schemas/Api.Api.Public.Consent.GetOneResponse.ClientDto"
+          },
+          "scopes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Api.Api.Public.Consent.GetOneResponse.ScopeDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Api.Api.Public.Consent.GetOneResponse.ClientDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Api.Api.Public.Consent.GetOneResponse.ScopeDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Api.Api.Public.Consent.RejectRequest": {
         "type": "object",
         "properties": {
           "consentRequestId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Api.Api.Public.Consent.RejectResponse": {
+        "type": "object",
+        "properties": {
+          "consentResponseId": {
             "type": "string",
             "nullable": true
           }

@@ -5,7 +5,12 @@ src/apis/ConsentApi.ts
 src/apis/index.ts
 src/index.ts
 src/models/ApiApiPublicConsentAcceptRequest.ts
+src/models/ApiApiPublicConsentAcceptResponse.ts
+src/models/ApiApiPublicConsentGetOneResponse.ts
+src/models/ApiApiPublicConsentGetOneResponseClientDto.ts
+src/models/ApiApiPublicConsentGetOneResponseScopeDto.ts
 src/models/ApiApiPublicConsentRejectRequest.ts
+src/models/ApiApiPublicConsentRejectResponse.ts
 src/models/index.ts
 src/runtime.ts
 tsconfig.json

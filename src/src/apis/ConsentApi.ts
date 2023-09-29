@@ -16,13 +16,22 @@
 import * as runtime from '../runtime';
 import type {
   ApiApiPublicConsentAcceptRequest,
+  ApiApiPublicConsentAcceptResponse,
+  ApiApiPublicConsentGetOneResponse,
   ApiApiPublicConsentRejectRequest,
+  ApiApiPublicConsentRejectResponse,
 } from '../models/index';
 import {
     ApiApiPublicConsentAcceptRequestFromJSON,
     ApiApiPublicConsentAcceptRequestToJSON,
+    ApiApiPublicConsentAcceptResponseFromJSON,
+    ApiApiPublicConsentAcceptResponseToJSON,
+    ApiApiPublicConsentGetOneResponseFromJSON,
+    ApiApiPublicConsentGetOneResponseToJSON,
     ApiApiPublicConsentRejectRequestFromJSON,
     ApiApiPublicConsentRejectRequestToJSON,
+    ApiApiPublicConsentRejectResponseFromJSON,
+    ApiApiPublicConsentRejectResponseToJSON,
 } from '../models/index';
 
 export interface ApiPublicConsentAcceptPostRequest {
@@ -44,7 +53,7 @@ export class ConsentApi extends runtime.BaseAPI {
 
     /**
      */
-    async apiPublicConsentAcceptPostRaw(requestParameters: ApiPublicConsentAcceptPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async apiPublicConsentAcceptPostRaw(requestParameters: ApiPublicConsentAcceptPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiApiPublicConsentAcceptResponse>> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -59,18 +68,19 @@ export class ConsentApi extends runtime.BaseAPI {
             body: ApiApiPublicConsentAcceptRequestToJSON(requestParameters.apiApiPublicConsentAcceptRequest),
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ApiApiPublicConsentAcceptResponseFromJSON(jsonValue));
     }
 
     /**
      */
-    async apiPublicConsentAcceptPost(requestParameters: ApiPublicConsentAcceptPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.apiPublicConsentAcceptPostRaw(requestParameters, initOverrides);
+    async apiPublicConsentAcceptPost(requestParameters: ApiPublicConsentAcceptPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiApiPublicConsentAcceptResponse> {
+        const response = await this.apiPublicConsentAcceptPostRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
     /**
      */
-    async apiPublicConsentGetRaw(requestParameters: ApiPublicConsentGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async apiPublicConsentGetRaw(requestParameters: ApiPublicConsentGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiApiPublicConsentGetOneResponse>> {
         const queryParameters: any = {};
 
         if (requestParameters.consentRequestId !== undefined) {
@@ -86,18 +96,19 @@ export class ConsentApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ApiApiPublicConsentGetOneResponseFromJSON(jsonValue));
     }
 
     /**
      */
-    async apiPublicConsentGet(requestParameters: ApiPublicConsentGetRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.apiPublicConsentGetRaw(requestParameters, initOverrides);
+    async apiPublicConsentGet(requestParameters: ApiPublicConsentGetRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiApiPublicConsentGetOneResponse> {
+        const response = await this.apiPublicConsentGetRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
     /**
      */
-    async apiPublicConsentRejectPostRaw(requestParameters: ApiPublicConsentRejectPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async apiPublicConsentRejectPostRaw(requestParameters: ApiPublicConsentRejectPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiApiPublicConsentRejectResponse>> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -112,13 +123,14 @@ export class ConsentApi extends runtime.BaseAPI {
             body: ApiApiPublicConsentRejectRequestToJSON(requestParameters.apiApiPublicConsentRejectRequest),
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ApiApiPublicConsentRejectResponseFromJSON(jsonValue));
     }
 
     /**
      */
-    async apiPublicConsentRejectPost(requestParameters: ApiPublicConsentRejectPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.apiPublicConsentRejectPostRaw(requestParameters, initOverrides);
+    async apiPublicConsentRejectPost(requestParameters: ApiPublicConsentRejectPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiApiPublicConsentRejectResponse> {
+        const response = await this.apiPublicConsentRejectPostRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
 }
