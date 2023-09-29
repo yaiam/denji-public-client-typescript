@@ -12,7 +12,7 @@
         "additionalProperties": {
           "disallowAdditionalPropertiesIfNotPresent": true,
           "legacyDiscriminatorBehavior": false,
-          "npmName": "denji-public-client",
+          "npmName": "@yaiam/denji-public-client",
           "npmVersion": "1.0.0-alpha01",
           "supportsES6": true
         }
