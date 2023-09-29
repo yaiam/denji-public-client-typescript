@@ -1,6 +1,6 @@
 {
   "name": "@yaiam/denji-public-client",
-  "version": "1.0.0-alpha01",
+  "version": "1.0.0-alpha02",
   "description": "OpenAPI client for @yaiam/denji-public-client",
   "author": "OpenAPI-Generator",
   "repository": {
