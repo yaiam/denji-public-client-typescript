@@ -8,5 +8,4 @@ src/models/ApiApiPublicConsentAcceptRequest.ts
 src/models/ApiApiPublicConsentRejectRequest.ts
 src/models/index.ts
 src/runtime.ts
-tsconfig.esm.json
 tsconfig.json
